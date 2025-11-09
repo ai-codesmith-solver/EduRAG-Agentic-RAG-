@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRAG — AI Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎓 EduRAG</h1>
+            <p>Learn Smarter • Solve Faster • Understand Deeper</p>
+        </header>
+
+        <main>
+            <form method="POST" enctype="multipart/form-data" class="form-card">
+                <div class="upload-section">
+                    <label class="label">📄 Upload Study Material</label>
+                    <input type="file" name="file" accept=".pdf,.txt,.csv,.docx,.md" class="input-file">
+                </div>
+
+                <div class="question-section">
+                    <label class="label">💬 Ask Your Question</label>
+                    <textarea name="query" rows="3" placeholder="E.g., Explain Newton’s third law in simple words..."
+                        required></textarea>
+                </div>
+
+                <div class="mode-section">
+                    <label class="label">🎯 Choose Learning Mode</label>
+                    <select name="mode" class="mode-select">
+                        <option value="1">Concept Mode — Deep Conceptual Understanding</option>
+                        <option value="2">Problem Mode — Real-World Problem Solving</option>
+                        <option value="3">PYQ Mode — Past-Year Exam Questions</option>
+                        <option value="4">Voice Mode — Hindi Voice Explanation</option>
+                        <option value="default" selected>Study Assistant — Guided Learning</option>
+                    </select>
+                </div>
+
+                <div class="btn-container">
+                    <button type="submit" class="submit-btn">Ask EduRAG 💡</button>
+                </div>
+            </form>
+
+            {% if error_message %}
+            <div class="error-box">
+                ⚠️ {{ error_message }}
+            </div>
+            {% endif %}
+
+            {% if result %}
+            <div class="result-box">
+                <h2>
+                    <span class="glow-icon">💡</span> EduRAG’s Answer
+                </h2>
+                <p> </p>
+                <p>{{ result }}</p>
+            </div>
+            {% endif %}
+        </main>
+
+        <footer class="footer">
+            <p>Made with ❤️ by EduRAG AI</p>
+        </footer>
+    </div>
+</body>
+
+</html>

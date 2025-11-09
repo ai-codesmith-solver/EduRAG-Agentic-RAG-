@@ -1,0 +1,260 @@
+/* -----------------------------
+   Global Design — EduRAG
+   Simple, clean, and modern UI
+--------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f8faff, #eef2f3);
+  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* -----------------------------
+   Container
+--------------------------------*/
+.container {
+  max-width: 850px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.09);
+}
+
+/* -----------------------------
+   Header
+--------------------------------*/
+.header {
+  background: linear-gradient(90deg, #007bff, #6c63ff);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.header p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+/* -----------------------------
+   Form Card
+--------------------------------*/
+.form-card {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-file {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  background: #fafafa;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-file:hover {
+  background: #f1f5ff;
+  border-color: #6c63ff;
+}
+
+textarea {
+  resize: none;
+  border: 1.5px solid #cfd8dc;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  background: #fafafa;
+}
+
+textarea:focus {
+  border-color: #6c63ff;
+  background: #fff;
+  outline: none;
+}
+
+.mode-select {
+  border: 1.5px solid #cfd8dc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  background: #fafafa;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.mode-select:focus {
+  border-color: #6c63ff;
+  background: #fff;
+}
+
+/* -----------------------------
+   Submit Button
+--------------------------------*/
+.btn-container {
+  text-align: center;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #007bff, #6c63ff);
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #0056d1, #5548ff);
+  box-shadow: 0 6px 18px rgba(108, 99, 255, 0.4);
+}
+
+/* -----------------------------
+   Result Section
+--------------------------------*/
+.result-box {
+  text-align: left !important;
+  margin-left: 0;
+  padding-left: 1rem;
+  color: #1a1a1a;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.result-box {
+  border-left: 4px solid #3b82f6; /* same blue shade, more confident */
+  background: #f9faff;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04); /* softer, more realistic shadow */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.result-box h3 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.result-box p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #111827;
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* -----------------------------
+   Error Box
+--------------------------------*/
+.error-box {
+  background: #ffecec;
+  color: #b10000;
+  border-left: 5px solid #ff4d4d;
+  border-radius: 12px;
+  margin: 20px 40px;
+  padding: 15px 20px;
+  font-weight: 500;
+}
+
+/* -----------------------------
+   Footer
+--------------------------------*/
+.footer {
+  text-align: center;
+  background: #f5f6fa;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #eee;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* -----------------------------
+   Animation
+--------------------------------*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------
+   Glow Icon
+--------------------------------*/
+.glow-icon {
+  color: #facc15; /* warm yellow for bulb */
+  text-shadow: 0 0 8px rgba(255, 223, 70, 0.8),
+               0 0 16px rgba(255, 223, 70, 0.5),
+               0 0 24px rgba(255, 223, 70, 0.3);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Smooth glowing pulse animation */
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 6px rgba(255, 223, 70, 0.7),
+                 0 0 12px rgba(255, 223, 70, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(255, 223, 70, 1),
+                 0 0 32px rgba(255, 223, 70, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 6px rgba(255, 223, 70, 0.7),
+                 0 0 12px rgba(255, 223, 70, 0.5);
+  }
+}
